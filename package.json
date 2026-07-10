@@ -1,0 +1,16 @@
+{
+  "name": "toneprint-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "server": "uvicorn backend.main:app --port 3001 --reload",
+    "client": "npm run dev --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm run build --prefix frontend",
+    "test-cli": "node frontend/src/index.js",
+    "test-cli-dry": "node frontend/src/index.js --dry-run"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

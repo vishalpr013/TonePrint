@@ -1,0 +1,27 @@
+# Dependency directories
+node_modules/
+frontend/node_modules/
+
+# Local databases and secrets
+.supermemory/
+.env
+
+# Build outputs
+dist/
+frontend/dist/
+frontend/results/
+
+# Python caching and environments
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Environment-specific files
+*.log
+.DS_Store
+rebuild_history.ps1
+
+improvements.md
+notes.txt
