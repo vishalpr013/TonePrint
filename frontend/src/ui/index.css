@@ -1,0 +1,94 @@
+@import "tailwindcss";
+@source "../**/*.{js,ts,jsx,tsx,html}";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  
+  --animate-slide-in: slideIn 0.3s ease-out forwards;
+  --animate-fade-in: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+body {
+  background-color: #09090b;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(244, 63, 94, 0.03) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(16, 185, 129, 0.02) 0px, transparent 50%);
+  pointer-events: none;
+}
+
+/* Custom premium card neon border glow */
+.border-glow {
+  box-shadow: 0 0 40px -10px rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.2) !important;
+  animation: glowPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 40px -10px rgba(99, 102, 241, 0.1);
+    border-color: rgba(99, 102, 241, 0.15) !important;
+  }
+  100% {
+    box-shadow: 0 0 50px -5px rgba(99, 102, 241, 0.2);
+    border-color: rgba(99, 102, 241, 0.25) !important;
+  }
+}
+
+/* Smooth textarea scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Safelist dynamic utilities for Tailwind v4 */
+@utility bg-blue-500\/10 { background-color: rgba(59, 130, 246, 0.1); }
+@utility text-blue-400 { color: rgb(96, 165, 250); }
+@utility border-blue-500\/20 { border-color: rgba(59, 130, 246, 0.2); }
+@utility text-blue-600 { color: rgb(37, 99, 235); }
+
+@utility bg-pink-500\/10 { background-color: rgba(236, 72, 153, 0.1); }
+@utility text-pink-400 { color: rgb(244, 114, 182); }
+@utility border-pink-500\/20 { border-color: rgba(236, 72, 153, 0.2); }
+@utility text-pink-600 { color: rgb(219, 39, 119); }
+
+@utility bg-emerald-500\/10 { background-color: rgba(16, 185, 129, 0.1); }
+@utility text-emerald-400 { color: rgb(52, 211, 153); }
+@utility border-emerald-500\/20 { border-color: rgba(16, 185, 129, 0.2); }
+@utility text-emerald-600 { color: rgb(5, 150, 105); }
+
+/* Context indicators */
+@utility bg-professor-indicator { background-color: rgba(59, 130, 246, 0.1); color: rgb(96, 165, 250); border-color: rgba(59, 130, 246, 0.2); }
+@utility bg-friend-indicator { background-color: rgba(236, 72, 153, 0.1); color: rgb(244, 114, 182); border-color: rgba(236, 72, 153, 0.2); }
+@utility bg-professional-indicator { background-color: rgba(16, 185, 129, 0.1); color: rgb(52, 211, 153); border-color: rgba(16, 185, 129, 0.2); }
